@@ -1,0 +1,147 @@
+/* ========== Banner Structure ========== */
+
+#banner-10326 {
+    border: 1px solid #dddddd;
+    width: 658px;
+    height: 402px;
+    float: left;
+    font-family: 'Helvetica Neue', Arial;
+}
+
+#hero-10326 {
+    background: #fd4664;
+    width: 256px;
+    height: 382px;
+    padding: 10px 25px;
+    float: left;
+}
+
+.img-10326 {
+    margin: 0;
+    width: 275px;
+    height: 382px;
+    line-height: 16px;
+    text-align:center;
+}
+
+.thin-10326 {
+    width: 120px;
+    padding: 20px 0;
+}
+
+.cta-10326 {
+    border: 1px solid #ffef74;
+    padding: 0px 15px;
+    background: url("../images/arrow-10326.png") right no-repeat;
+    width: 140px;
+    height: 35px;
+}
+
+/* ========== Typography ========== */
+
+h1 {
+    font-size: 26px;
+    color: #ffef74;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.space-10326 {
+    padding: 8px 0;
+}
+
+.small-10326 {
+    font-size: 11px;
+}
+
+.space-img-10326 {
+    padding: 25px 13%;
+}
+
+p.red-10326 {
+    font-size: 18px;
+    color: #fd4664;
+}
+
+.red-10326 {
+    font-size: 22px;
+    color: #fd4664;
+}
+
+.yellow-10326 {
+    color: #ffef74;
+}
+
+/* ========== Slider ========== */
+
+#container {
+    background: #fff;
+    height: 255px;
+    width: 350px;
+    float:left;
+}
+
+// #slideleft {
+//     // background: url(images/icons.gif) -50px -265px no-repeat
+// }
+
+// #slideleft:hover {
+//     background-position: -0 -265px
+// }
+
+// #slideright {
+//     // background: url(images/icons.gif) 0 90px no-repeat
+// }
+
+// #slideright:hover {
+//     background-position: -50px 90px
+// }
+
+#slider {
+    position: relative;
+    overflow: auto;
+    width: 320px;
+    height: 255px;
+}
+
+#slider ul {
+    position: absolute;
+    list-style: none;
+    top: 0;
+    left: 0
+}
+
+#slider li {
+    float: left;
+    width: 320px;
+    height: 255px;    
+}
+
+.pagination {
+    position: absolute;
+    top: 300px;
+    right: 230px;
+    list-style: none;
+    height: 25px
+}
+
+.pagination li {
+    float: left;
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    background: #ccc;
+    margin: 0 4px 0 0;
+    border: 1px solid #fff;
+}
+
+.pagination li:hover,
+li.current {
+    background: #333
+}

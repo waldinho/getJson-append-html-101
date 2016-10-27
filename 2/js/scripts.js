@@ -18,8 +18,19 @@ function xmlParser(xml) {
 
     $(xml).find("item").first().text(function() {
 
-        $("#stage-10326").append('<div class="item-10326"><p class="red-10326">-' + $(this).find("discountPercentage").text() + '%*</p><img class="space-img-10326" src="' + $(this).find("image225").text() + '"/><div>' + $(this).find("title").text() + '</div><div class="red-10326 space-10326">' + $(this).find("currency").text() + ' ' + $(this).find("price").text() + '</div><div class="small-10326">UVP ' + $(this).find("currency").text() + ' <del>' + $(this).find("price").text() + '</del></div></div></div>');
+        $("#title-10326").append('<div>' + $(this).find("title").text() + '</div>');
+
+
+        $("#price-10326").append('<div class="red-10326 _price-10326">' + $(this).find("currency").text() + ' ' + $(this).find("price").text() + '</div>');
+
+
+        $("#rpp-10326").append('<div class="small-10326 _red-color">UVP ' + $(this).find("currency").text() + ' <del>' + $(this).find("price").text() + '</del></div>');
+
+
+        $("#img-10326").append('<img class="space-img-10326" src="' + $(this).find("image225").text() + '"/>');
+   
 
     });
 
 }
+ 

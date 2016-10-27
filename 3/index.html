@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script>
+    $(document).ready(function() {
+        $.ajax({
+            type: "GET",
+            url: "http://www.ebay.com/rps/feed/v1.0/ebay-de",
+            dataType: "xml",
+            success: xmlParser
+        });
+    });
+
+    function xmlParser(xml) {
+
+        var h = 0;
+        var i = 1;
+        var j = 2;
+        var k = 4;
+
+        $(xml).find("item").each(function(idx) {
+
+            if (idx == h++) {
+                $(".slide").append('<div class="img-10326"><img src="' + $(this).find("image225").text() + '"/></div>')
+            };
+
+        });
+
+        $(xml).find("item").each(function(idx) {
+
+            if (idx == i) {
+                $(".slide1").append('<div class="img-10326"><img src="' + $(this).find("image225").text() + '"/></div>')
+            };
+
+        });
+
+        $(xml).find("item").each(function(idx) {
+
+            if (idx == j) {
+                $(".slide2").append('<div class="img-10326"><img src="' + $(this).find("image225").text() + '"/></div>')
+            };
+
+        });
+
+        // $(xml).find("item").each(function(idx) {
+
+        //     if (idx == k) {
+        //         $(".slide3").append('<div class="img-10326"><img src="' + $(this).find("image225").text() + '"/></div>')
+        //     };
+
+        // });
+
+    }
+    </script>
+</head>
+
+<body>
+    <div id="banner-10326">
+        <div id="hero-10326">
+            <h1>Täglich neue WOW! Angebote. Genau deins.</h1>
+            <p class="yellow-10326 thin-10326">Große Rabatte. Top-Marken. Kostenloser Inlandsversand. Alles zum Sofort-Kaufen.</p>
+            <div class="cta-10326">
+                <div class="yellow-10326" style="padding-top:8px;">Jetzt zugreifen</div>
+            </div>
+            <p class="small-10326 yellow-10326">*ggü. UVP</p>
+        </div>
+        <div id="wrapper">
+            <div id="container">
+                <div class="sliderbutton" id="slideleft" onclick="slideshow.move(-1)"></div>
+                <div id="slider">
+                    <ul>
+                        <li class="slide"></li>
+                        <li class="slide1"></li>
+                        <li class="slide2"></li>
+                        <!-- <li class="slide3"></li> -->
+                    </ul>
+                </div>
+                <div class="sliderbutton" id="slideright" onclick="slideshow.move(1)"></div>
+                <ul id="pagination" class="pagination">
+                    <li onclick="slideshow.pos(0)"></li>
+                    <li onclick="slideshow.pos(1)"></li>
+                    <li onclick="slideshow.pos(2)"></li>
+                    <!-- <li onclick="slideshow.pos(3)"></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var slideshow = new TINY.slider.slide('slideshow', {
+        id: 'slider',
+        auto: 3,
+        resume: false,
+        vertical: false,
+        navid: 'pagination',
+        activeclass: 'current',
+        position: 0,
+        rewind: false,
+        elastic: true,
+    });
+    </script>
+</body>
+
+</html>
